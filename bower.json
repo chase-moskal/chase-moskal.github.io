@@ -1,0 +1,7 @@
+{
+  "name": "chasemoskal-website",
+  "private": true,
+  "dependencies": {
+    "requirejs": "^2.1.22"
+  }
+}

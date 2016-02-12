@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Chase Moskal - TypeScript Developer</title>
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="stylesheet" href="build/index.css"/>
+        <script>
+
+            function loadScript(link, onload) {
+                var script = document.createElement("script");
+                if (onload) script.onload = onload;
+                script.src = link;
+                document.head.appendChild(script);
+                return script;
+            }
+
+            // Debug mode -- use requirejs.
+            if (/^\??debug/i.test(location.search)) {
+                loadScript("bower_components/requirejs/require.js", function() {
+                    require(["build/index.js"]);
+                });
+            }
+
+            // Production -- use webpack bundle.
+            else {
+                loadScript("build/index.bundle.js");
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>Chase Moskal - TypeScript Developer</h1>
+    </body>
+</html>
