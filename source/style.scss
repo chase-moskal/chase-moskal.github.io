@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 $latitude-green: #128943;
 
@@ -13,6 +14,18 @@ html {
 h1 {
     font-weight: normal;
     strong { font-weight: normal; }
+}
+
+a {
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 0.1em 0.2em;
+    &:link, &:visited { color: $latitude-green; }
+    &:hover {
+        color: lighten($latitude-green, 10%);
+        text-decoration: underline;
+    }
+    &:active { color: darken($latitude-green, 10%); }
 }
 
 .header {
@@ -62,18 +75,6 @@ h1 {
             font-weight: 300;
             font-style: italic;
         }
-
-        a {
-            text-decoration: none;
-            border-radius: 4px;
-            padding: 0.1em 0.2em;
-            &:link, &:visited { color: $latitude-green; }
-            &:hover {
-                color: lighten($latitude-green, 10%);
-                text-decoration: underline;
-            }
-            &:active { color: darken($latitude-green, 10%); }
-        }
     }
 
     nav {
@@ -98,9 +99,13 @@ h1 {
     }
 }
 
+[data-email] {
+    opacity: 0.8;
+}
+
 .coming-soon {
     padding: 10%;
-    font-size: 2em;
+    font-size: 1.2em;
     font-style: italic;
     text-align: center;
     color: white;

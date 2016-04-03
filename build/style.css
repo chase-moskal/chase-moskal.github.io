@@ -15,6 +15,18 @@ h1 {
   h1 strong {
     font-weight: normal; }
 
+a {
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 0.1em 0.2em; }
+  a:link, a:visited {
+    color: #128943; }
+  a:hover {
+    color: #18b659;
+    text-decoration: underline; }
+  a:active {
+    color: #0c5c2d; }
+
 .header {
   width: 98%;
   padding: 1%;
@@ -51,17 +63,6 @@ h1 {
       opacity: 0.7;
       font-weight: 300;
       font-style: italic; }
-    .header h1 a {
-      text-decoration: none;
-      border-radius: 4px;
-      padding: 0.1em 0.2em; }
-      .header h1 a:link, .header h1 a:visited {
-        color: #128943; }
-      .header h1 a:hover {
-        color: #18b659;
-        text-decoration: underline; }
-      .header h1 a:active {
-        color: #0c5c2d; }
   .header nav ol {
     list-style: none; }
     .header nav ol li {
@@ -80,9 +81,12 @@ h1 {
         .header nav ol li a:hover, .header nav ol li a.active {
           text-decoration: underline; }
 
+[data-email] {
+  opacity: 0.8; }
+
 .coming-soon {
   padding: 10%;
-  font-size: 2em;
+  font-size: 1.2em;
   font-style: italic;
   text-align: center;
   color: white;

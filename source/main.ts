@@ -1,3 +1,4 @@
-import Check from './modules/Check';
-console.log("Check:", new Check);
-window["Check"] = Check;
+
+// Anti-spam efforts, to conceal my email address from bots.
+import antiSpam from "./modules/antiSpam";
+antiSpam(document);

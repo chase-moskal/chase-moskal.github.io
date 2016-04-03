@@ -44,12 +44,11 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(1)], __WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports, Check_1) {
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports, __webpack_require__(1)], __WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports, antiSpam_1) {
 	    "use strict";
-	    console.log("Check:", new Check_1.default);
-	    window["Check"] = Check_1.default;
+	    antiSpam_1.default(document);
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
+	//# sourceMappingURL=main.js.map
 
 /***/ },
 /* 1 */
@@ -57,17 +56,20 @@
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, exports], __WEBPACK_AMD_DEFINE_RESULT__ = function (require, exports) {
 	    "use strict";
-	    var Check = (function () {
-	        function Check() {
+	    /**
+	     * Run through the DOM and inject Base64-encoded email addresses.
+	     */
+	    function antiSpam(document) {
+	        if (document === void 0) { document = window.document; }
+	        for (var _i = 0, _a = [].slice.call(document.querySelectorAll("[data-email]")); _i < _a.length; _i++) {
+	            var a = _a[_i];
+	            a.href = a.textContent = atob(a.getAttribute("data-email"));
 	        }
-	        Check.prototype.check = function () { return true; };
-	        Check.check = true;
-	        return Check;
-	    }());
+	    }
 	    Object.defineProperty(exports, "__esModule", { value: true });
-	    exports.default = Check;
+	    exports.default = antiSpam;
 	}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
+	//# sourceMappingURL=antiSpam.js.map
 
 /***/ }
 /******/ ]);

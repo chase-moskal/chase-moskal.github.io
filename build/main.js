@@ -1,5 +1,5 @@
-define(["require", "exports", './modules/Check'], function (require, exports, Check_1) {
+define(["require", "exports", "./modules/antiSpam"], function (require, exports, antiSpam_1) {
     "use strict";
-    console.log("Check:", new Check_1.default);
-    window["Check"] = Check_1.default;
+    antiSpam_1.default(document);
 });
+//# sourceMappingURL=main.js.map
