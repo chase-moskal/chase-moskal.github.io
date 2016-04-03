@@ -1,0 +1,108 @@
+@charset "utf-8";
+$latitude-green: #128943;
+
+* { margin: 0; padding: 0; }
+
+html {
+    font-family: "Lato", Arial;
+    font-size: 16px;
+    background: #888;
+    @media (max-width:600px) { font-size: 12px; }
+}
+
+h1 {
+    font-weight: normal;
+    strong { font-weight: normal; }
+}
+
+.header {
+    width: 98%;
+    padding: 1%;
+    text-align: center;
+
+    & > * {
+        margin: 1em auto;
+    }
+
+    background: #eee;
+    box-shadow: 0 4px 7px rgba(0,0,0, 0.1);
+
+    @media (min-width:800px) {
+        display: table;
+        text-align: left;
+        width: 92%;
+        padding: 4%;
+        & > * {
+            display: table-cell;
+            vertical-align: middle;
+            &:first-child { width: 1%; }
+        }
+    }
+
+    img {
+        width: 6em;
+        margin-right: 1em;
+        border: 3px solid white;
+        border-radius: 6em;
+        box-shadow: 1px 2px 4px rgba(0,0,0, 0.1);
+    }
+
+    h1 {
+        line-height: 0.8em;
+
+        strong {
+            font-size: 1.2em;
+            display: block;
+            opacity: 0.9;
+        }
+
+        em {
+            font-size: 0.6em;
+            opacity: 0.7;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        a {
+            text-decoration: none;
+            border-radius: 4px;
+            padding: 0.1em 0.2em;
+            &:link, &:visited { color: $latitude-green; }
+            &:hover {
+                color: lighten($latitude-green, 10%);
+                text-decoration: underline;
+            }
+            &:active { color: darken($latitude-green, 10%); }
+        }
+    }
+
+    nav {
+        ol {
+            list-style: none;
+            li {
+                display: inline-block;
+                margin: 0 0.5em;
+
+                text-transform: lowercase;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    &:link { opacity: 0.5; }
+                    &:hover { opacity: 0.7; }
+                    &:active { opacity: 0.9; }
+                    &:hover, &.active { text-decoration: underline; }
+                }
+            }
+        }
+    }
+}
+
+.coming-soon {
+    padding: 10%;
+    font-size: 2em;
+    font-style: italic;
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+}

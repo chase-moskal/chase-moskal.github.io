@@ -1,9 +1,12 @@
 <!doctype html>
 <html>
     <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
         <title>Chase Moskal - TypeScript Developer</title>
         <link rel="shortcut icon" href="favicon.ico"/>
-        <link rel="stylesheet" href="build/index.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300,300italic,400italic,700italic"/>
+        <link rel="stylesheet" href="build/style.css"/>
         <script>
 
             function loadScript(link, onload) {
@@ -17,18 +20,38 @@
             // Debug mode -- use requirejs.
             if (/^\??debug/i.test(location.search)) {
                 loadScript("bower_components/requirejs/require.js", function() {
-                    require(["build/index.js"]);
+                    require(["build/main.js"]);
                 });
             }
 
             // Production -- use webpack bundle.
             else {
-                loadScript("build/index.bundle.js");
+                loadScript("build/main.bundle.js");
             }
 
         </script>
     </head>
     <body>
-        <h1>Chase Moskal - TypeScript Developer</h1>
+        <header class="header" itemtype="http://schema.org/Person">
+            <div>
+                <img itemprop="image" src="images/chase.small.jpg" alt=""/>
+            </div>
+            <h1>
+                <strong itemprop="name">Chase Moskal</strong>
+                <em>
+                    <span itemprop="jobTitle">Software Developer</span> at <a href="http://www.latitudegeo.com/" target="_blank" itemprop="worksFor">Latitude Geographics</a>
+                </em>
+            </h1>
+            <nav>
+                <ol>
+                    <li><a class="active" href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ol>
+            </nav>
+        </header>
+        <main>
+            <p class="coming-soon">~ Website Coming Soon ~</p>
+        </main>
     </body>
 </html>
