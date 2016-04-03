@@ -91,5 +91,7 @@ a {
   text-align: center;
   color: white;
   opacity: 0.5; }
+  .coming-soon a {
+    color: #454954; }
 
 /*# sourceMappingURL=style.css.map */
