@@ -10,7 +10,7 @@
     "build": "npm run clean --silent && (npm run build-scripts --silent & npm run build-styles --silent) && echo Build complete.",
     "watch-scripts": "tsc -v && tsc -w",
     "watch-styles": "node-sass --watch --source-map true source/style.scss build/style.css",
-    "watch": "npm run watch-scripts --silent & npm run watch-styles --silent",
+    "watch": "parallelshell \"npm run watch-scripts --silent\" \"npm run watch-styles --silent\"",
     "server": "http-server -p 8080",
     "superdev": "parallelshell \"npm run server --silent\" \"npm run watch --silent\""
   },
