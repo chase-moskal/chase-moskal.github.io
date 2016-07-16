@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "install": "npm run build --silent && echo Project ready.",
-    "compile-scripts": "tsc -v && tsc && r_js -o name=node_modules/almond/almond include=build/main out=build/main.bundle.js wrap=true",
+    "compile-scripts": "tsc -v && tsc && r_js -o build.js",
     "compile-styles": "node-sass --source-map true source/style.scss build/style.css",
     "clean": "rimraf build",
     "build": "npm run clean && (npm run compile-scripts & npm run compile-styles) && echo Build complete.",
