@@ -1,18 +1,20 @@
 {
   "name": "chasemoskal-website",
+  "private": true,
   "version": "0.0.0",
   "scripts": {
-    "install": "bower install",
-    "compile-scripts": "tsc -v && tsc -p source && webpack build/main.js build/main.bundle.js",
+    "install": "npm run build --silent && echo Project ready.",
+    "compile-scripts": "tsc -v && tsc && r_js -o name=node_modules/almond/almond include=build/main out=build/main.bundle.js wrap=true",
     "compile-styles": "node-sass --source-map true source/style.scss build/style.css",
     "clean": "rimraf build",
     "build": "npm run clean && (npm run compile-scripts & npm run compile-styles) && echo Build complete.",
     "watch-styles": "node-sass --watch --source-map true source/style.scss build/style.css"
   },
   "devDependencies": {
+    "almond": "^0.3.2",
     "node-sass": "^3.4.2",
+    "requirejs": "^2.2.0",
     "rimraf": "^2.5.2",
-    "typescript": "^1.8.9",
-    "webpack": "^1.12.14"
+    "typescript": "^1.8.9"
   }
 }

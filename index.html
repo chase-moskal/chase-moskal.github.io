@@ -14,21 +14,21 @@
             function loadScript(link, onload) {
                 var script = document.createElement("script");
                 if (onload) script.onload = onload;
-                script.src = link;
+                script.src = link + ".js";
                 document.head.appendChild(script);
                 return script;
             }
 
-            // Debug mode -- use requirejs.
+            // Debug mode. Load modules individually.
             if (/^\??debug/i.test(location.search)) {
-                loadScript("bower_components/requirejs/require.js", function() {
-                    require(["build/main.js"]);
+                loadScript("deps/require", function() {
+                    require(["build/main"]);
                 });
             }
 
-            // Production -- use webpack bundle.
+            // Production mode. Load compact module bundle.
             else {
-                loadScript("build/main.bundle.js");
+                loadScript("build/main.bundle");
             }
 
         </script>
