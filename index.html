@@ -11,6 +11,11 @@
         <link rel="shortcut icon" href="favicon.ico"/>
 
         <script>
+
+            /**
+             * Load and execute a script by URL.
+             * Inject a script tag into the document's <head>.
+             */
             function loadScript(link, onload) {
                 var script = document.createElement("script");
                 if (onload) script.onload = onload;
@@ -25,6 +30,7 @@
 
             // Production mode. Load optimized module bundle.
             else loadScript("build/main.bundle");
+
         </script>
     </head>
     <body>
@@ -61,7 +67,7 @@
                 </ol>
             </nav>-->
         </header>
-    
+
         <!--
          ::: MAIN CONTENT
          -->
