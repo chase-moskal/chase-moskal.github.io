@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-        "module": "amd",
-        "target": "es5",
-        "rootDir": "source",
-        "outDir": "build",
-        "sourceMap": true
-    }
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es5",
+    "rootDir": "source",
+    "outDir": "build",
+    "sourceMap": true
+  }
 }

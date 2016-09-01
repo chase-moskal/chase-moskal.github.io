@@ -1,107 +1,107 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width"/>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
 
-        <title>Chase Moskal — TypeScript Developer</title>
+    <title>Chase Moskal — TypeScript Developer</title>
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300,300italic,400italic,700italic"/>
-        <link rel="stylesheet" href="build/style.css"/>
-        <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300,300italic,400italic,700italic"/>
+    <link rel="stylesheet" href="build/style.css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
 
-        <script>
+    <script>
 
-            /**
-             * Load and execute a script by URL.
-             * Inject a script tag into the document's <head>.
-             */
-            function loadScript(link, onload) {
-                var script = document.createElement("script");
-                if (onload) script.onload = onload;
-                script.src = link + ".js";
-                document.head.appendChild(script);
-                return script;
-            }
+      /**
+       * Load and execute a script by URL.
+       * Inject a script tag into the document's <head>.
+       */
+      function loadScript(link, onload) {
+        var script = document.createElement("script");
+        if (onload) script.onload = onload;
+        script.src = link + ".js";
+        document.head.appendChild(script);
+        return script;
+      }
 
-            // Debug mode. Load modules individually.
-            if (/^\??debug/i.test(location.search))
-                loadScript("deps/require", function() { require(["build/main"]) });
+      // Debug mode. Load modules individually.
+      if (/^\??debug/i.test(location.search))
+        loadScript("deps/require", function() { require(["build/script"]) });
 
-            // Production mode. Load optimized module bundle.
-            else loadScript("build/main.bundle");
+      // Production mode. Load optimized module bundle.
+      else loadScript("build/script.bundle");
 
-        </script>
-    </head>
-    <body>
+    </script>
+  </head>
+  <body>
 
-        <!--
-         ::: TOP HEADER/BANNER
-         -->
-        <header class="header" itemtype="http://schema.org/Person">
+    <!--
+     ::: TOP HEADER/BANNER
+     -->
+    <header class="header" itemtype="http://schema.org/Person">
 
-            <!-- My portrait -->
-            <div>
-                <img itemprop="image" src="images/chase.small.jpg" alt=""/>
-            </div>
+      <!-- My portrait -->
+      <div>
+        <img itemprop="image" src="images/chase.small.jpg" alt=""/>
+      </div>
 
-            <!-- Name and title -->
-            <h1>
-                <strong itemprop="name">Chase Moskal</strong>
-                <em>
-                    <span itemprop="jobTitle">TypeScript Developer</span> at <a href="http://www.latitudegeo.com/" target="_blank" itemprop="worksFor">Latitude Geographics</a>
-                </em>
-            </h1>
+      <!-- Name and title -->
+      <h1>
+        <strong itemprop="name">Chase Moskal</strong>
+        <em>
+          <span itemprop="jobTitle">TypeScript Developer</span> at <a href="http://www.latitudegeo.com/" target="_blank" itemprop="worksFor">Latitude Geographics</a>
+        </em>
+      </h1>
 
-            <!-- Email address -->
-            <div>
-                <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a>
-            </div>
+      <!-- Email address -->
+      <div>
+        <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a>
+      </div>
 
-            <!-- Navbar -->
-            <!--<nav>
-                <ol>
-                    <li><a class="active" href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ol>
-            </nav>-->
-        </header>
+      <!-- Navbar -->
+      <!--<nav>
+        <ol>
+          <li><a class="active" href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ol>
+      </nav>-->
+    </header>
 
-        <!--
-         ::: MAIN CONTENT
-         -->
-        <main>
+    <!--
+     ::: MAIN CONTENT
+     -->
+    <main>
 
-            <!-- Projects section -->
-            <section>
-                <div class="projects">
-                    <h2>Projects</h2>
-                    <p>I've a got a couple of side-projects that keep me learning.</p>
-                    <section>
-                        <h3>
-                            <a href="https://github.com/ChaseMoskal/Nanoshooter" target="_blank">Nanoshooter — on github</a>
-                        </h3>
-                        <p>Free 3D open source online multiplayer action web game/framework built on Babylon.js.</p>
-                    </section>
-                    <section>
-                        <h3>
-                            <a href="https://pastesafe.github.io/" target="_blank">PasteSafe — on github</a>
-                        </h3>
-                        <p>Instant web cryptography. Encrypt text with password as you type.</p>
-                    </section>
-                </div>
-            </section>
+      <!-- Projects section -->
+      <section>
+        <div class="projects">
+          <h2>Projects</h2>
+          <p>I've a got a couple of side-projects that keep me learning.</p>
+          <section>
+            <h3>
+              <a href="https://github.com/ChaseMoskal/Nanoshooter" target="_blank">Nanoshooter — on github</a>
+            </h3>
+            <p>Free 3D open source online multiplayer action web game/framework built on Babylon.js.</p>
+          </section>
+          <section>
+            <h3>
+              <a href="https://pastesafe.github.io/" target="_blank">PasteSafe — on github</a>
+            </h3>
+            <p>Instant web cryptography. Encrypt text with password as you type.</p>
+          </section>
+        </div>
+      </section>
 
-            <footer>
-                <section class="free-and-open">
-                    <p><strong>This website's source code is free and open.</strong></p>
-                    <p>
-                        <small>MIT Licensed</small>
-                        <a href="https://github.com/ChaseMoskal/chasemoskal.github.io" target="_blank">➳ See on GitHub</a>
-                    </p>
-                </section>
-            </footer>
-        </main>
-    </body>
+      <footer>
+        <section class="free-and-open">
+          <p><strong>This website's source code is free and open.</strong></p>
+          <p>
+            <small>MIT Licensed</small>
+            <a href="https://github.com/ChaseMoskal/chasemoskal.github.io" target="_blank">➳ See on GitHub</a>
+          </p>
+        </section>
+      </footer>
+    </main>
+  </body>
 </html>

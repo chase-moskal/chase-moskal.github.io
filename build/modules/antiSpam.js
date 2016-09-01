@@ -2,6 +2,7 @@ define(["require", "exports"], function (require, exports) {
     "use strict";
     /**
      * Run through the DOM and inject Base64-encoded email addresses.
+     * Seek out [data-email] attributes, assume their contents are base-64 encoded strings, decode them, and insert the result as the element's text content.
      */
     function antiSpam(document) {
         if (document === void 0) { document = window.document; }

@@ -9,39 +9,39 @@
 $latitude-green: #128943;
 
 html {
-    font-family: "Lato", Arial;
-    font-size: 16px;
-    background: #888;
-    @media (max-width:600px) { font-size: 12px; }
+  font-family: "Lato", Arial;
+  font-size: 16px;
+  background: #888;
+  @media (max-width:600px) { font-size: 12px; }
 
-    // Headings.
-    h1 {
-        font-weight: normal;
-        strong { font-weight: normal; }
-    }
+  // Headings.
+  h1 {
+    font-weight: normal;
+    strong { font-weight: normal; }
+  }
 }
 
 // Create links with a base color.
 @mixin link($linkcolor: $latitude-green) {
-    text-decoration: none;
-    &:link, &:visited { color: $linkcolor; }
-    &:hover {
-        color: lighten($linkcolor, 10%);
-        text-decoration: underline;
-    }
-    &:active { color: darken($linkcolor, 10%); }
+  text-decoration: none;
+  &:link, &:visited { color: $linkcolor; }
+  &:hover {
+    color: lighten($linkcolor, 10%);
+    text-decoration: underline;
+  }
+  &:active { color: darken($linkcolor, 10%); }
 }
 
 // Common establishes a common padding and width with media queies for page sections.
 // This makes it easy to line up the header content and the main content on the left side.
 @mixin common-slice {
-    width: auto;
-    padding: 4%;
+  width: auto;
+  padding: 4%;
 
-    @media (max-width: 800px) {
-        width: auto;
-        $padding: 1%;
-    }
+  @media (max-width: 800px) {
+    width: auto;
+    $padding: 1%;
+  }
 }
 
 ////
@@ -49,74 +49,74 @@ html {
 ////
 
 .header {
-    @include common-slice;
-    text-align: center;
+  @include common-slice;
+  text-align: center;
 
+  & > * {
+    margin: 1em auto;
+  }
+
+  background: #eee;
+  box-shadow: 0 4px 7px rgba(0,0,0, 0.1);
+
+  @media (min-width:800px) {
+    display: table;
+    text-align: left;
     & > * {
-        margin: 1em auto;
+      display: table-cell;
+      vertical-align: middle;
+      &:first-child { width: 1%; }
+    }
+  }
+
+  img {
+    width: 6em;
+    margin-right: 1em;
+    border: 3px solid white;
+    border-radius: 6em;
+    box-shadow: 1px 2px 4px rgba(0,0,0, 0.1);
+  }
+
+  h1 {
+    line-height: 0.8em;
+
+    strong {
+      font-size: 1.2em;
+      display: block;
+      opacity: 0.9;
     }
 
-    background: #eee;
-    box-shadow: 0 4px 7px rgba(0,0,0, 0.1);
-
-    @media (min-width:800px) {
-        display: table;
-        text-align: left;
-        & > * {
-            display: table-cell;
-            vertical-align: middle;
-            &:first-child { width: 1%; }
-        }
+    em {
+      padding-left: 0.5em;
+      font-size: 0.6em;
+      opacity: 0.7;
+      font-weight: 300;
+      font-style: italic;
     }
+  }
 
-    img {
-        width: 6em;
-        margin-right: 1em;
-        border: 3px solid white;
-        border-radius: 6em;
-        box-shadow: 1px 2px 4px rgba(0,0,0, 0.1);
-    }
+  a { @include link; }
 
-    h1 {
-        line-height: 0.8em;
+  // nav {
+  //     ol {
+  //         list-style: none;
+  //         li {
+  //             display: inline-block;
+  //             margin: 0 0.5em;
 
-        strong {
-            font-size: 1.2em;
-            display: block;
-            opacity: 0.9;
-        }
+  //             text-transform: lowercase;
 
-        em {
-            padding-left: 0.5em;
-            font-size: 0.6em;
-            opacity: 0.7;
-            font-weight: 300;
-            font-style: italic;
-        }
-    }
-
-    a { @include link; }
-
-    // nav {
-    //     ol {
-    //         list-style: none;
-    //         li {
-    //             display: inline-block;
-    //             margin: 0 0.5em;
-
-    //             text-transform: lowercase;
-
-    //             a {
-    //                 text-decoration: none;
-    //                 color: black;
-    //                 &:link { opacity: 0.5; }
-    //                 &:hover { opacity: 0.7; }
-    //                 &:active { opacity: 0.9; }
-    //                 &:hover, &.active { text-decoration: underline; }
-    //             }
-    //         }
-    //     }
-    // }
+  //             a {
+  //                 text-decoration: none;
+  //                 color: black;
+  //                 &:link { opacity: 0.5; }
+  //                 &:hover { opacity: 0.7; }
+  //                 &:active { opacity: 0.9; }
+  //                 &:hover, &.active { text-decoration: underline; }
+  //             }
+  //         }
+  //     }
+  // }
 }
 
 ////
@@ -125,51 +125,51 @@ html {
 
 main {
 
-    // Main sections.
-    & > section {
-        @include common-slice;
+  // Main sections.
+  & > section {
+    @include common-slice;
 
-        color: #eee;
-        background: #444;
+    color: #eee;
+    background: #444;
 
-        h2 {
-            color: #fff;
-            text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3);
-        }
-
-        a { @include link(dodgerblue); }
+    h2 {
+      color: #fff;
+      text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3);
     }
 
-    .projects {
-        width: auto;
-        max-width: 480px;
-        margin: 0 auto;
+    a { @include link(dodgerblue); }
+  }
 
-        * + * { margin: 0.5em auto; }
+  .projects {
+    width: auto;
+    max-width: 480px;
+    margin: 0 auto;
 
-        & > * + section {
-            margin-top: 1.5em;
-        }
+    * + * { margin: 0.5em auto; }
 
-        p { color: #aaa; }
+    & > * + section {
+      margin-top: 1.5em;
     }
 
-    // Main footer
-    footer {
-        @include common-slice;
+    p { color: #aaa; }
+  }
 
-        text-align: center;
-        color: #eee;
-        a { @include link(#9ecfff); }
+  // Main footer
+  footer {
+    @include common-slice;
 
-        .free-and-open {
-            display: block;
-            max-width: 480px;
-            margin: 0 auto;
-            letter-spacing: 0.1em;
-            font-style: italic;
-            p { margin: 0.69em auto; }
-            small { font-size: 1em; opacity: 0.8; }
-        }
+    text-align: center;
+    color: #eee;
+    a { @include link(#9ecfff); }
+
+    .free-and-open {
+      display: block;
+      max-width: 480px;
+      margin: 0 auto;
+      letter-spacing: 0.1em;
+      font-style: italic;
+      p { margin: 0.69em auto; }
+      small { font-size: 1em; opacity: 0.8; }
     }
+  }
 }
