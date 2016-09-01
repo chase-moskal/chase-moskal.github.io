@@ -7,7 +7,7 @@
     "clean": "rimraf build",
     "build-scripts": "tsc -v && tsc && r_js -o build.js",
     "build-styles": "node-sass --source-map true source/style.scss build/style.css",
-    "build": "npm run clean --silent && (npm run build-scripts --silent & npm run build-styles --silent) && echo Build complete.",
+    "build": "npm run clean --silent && parallelshell \"npm run build-scripts --silent\" \"npm run build-styles --silent\" && echo Build complete.",
     "watch-scripts": "tsc -v && tsc -w",
     "watch-styles": "node-sass --watch --source-map true source/style.scss build/style.css",
     "watch": "parallelshell \"npm run watch-scripts --silent\" \"npm run watch-styles --silent\"",
