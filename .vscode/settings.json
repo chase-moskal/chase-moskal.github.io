@@ -1,7 +1,11 @@
 {
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.wrappingColumn": 0,
-    "editor.renderWhitespace": true,
-    "editor.wrappingIndent": "indent"
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wrappingColumn": 0,
+  "editor.renderWhitespace": true,
+  "editor.wrappingIndent": "indent",
+  "files.exclude": {
+    "build": true,
+    "node_modules": true
+  }
 }
