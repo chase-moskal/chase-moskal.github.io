@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 
 ////
@@ -6,12 +7,14 @@
 
 * { margin: 0; padding: 0; }
 
-$latitude-green: #128943;
+$color-latitudegreen: #128943;
+$color-backdrop: #140f0b;
+$color-mainback: #eee;
 
 html {
   font-family: "Lato", Arial;
   font-size: 16px;
-  background: #888;
+  background: $color-backdrop;
   @media (max-width:600px) { font-size: 12px; }
 
   // Headings.
@@ -22,7 +25,7 @@ html {
 }
 
 // Create links with a base color.
-@mixin link($linkcolor: $latitude-green) {
+@mixin link($linkcolor: $color-latitudegreen) {
   text-decoration: none;
   &:link, &:visited { color: $linkcolor; }
   &:hover {
@@ -97,26 +100,26 @@ html {
 
   a { @include link; }
 
-  // nav {
-  //     ol {
-  //         list-style: none;
-  //         li {
-  //             display: inline-block;
-  //             margin: 0 0.5em;
+  nav {
+    ol {
+      list-style: none;
+      li {
+        display: inline-block;
+        margin: 0 0.5em;
 
-  //             text-transform: lowercase;
+        text-transform: lowercase;
 
-  //             a {
-  //                 text-decoration: none;
-  //                 color: black;
-  //                 &:link { opacity: 0.5; }
-  //                 &:hover { opacity: 0.7; }
-  //                 &:active { opacity: 0.9; }
-  //                 &:hover, &.active { text-decoration: underline; }
-  //             }
-  //         }
-  //     }
-  // }
+        a {
+          text-decoration: none;
+          color: black;
+          &:link { opacity: 0.5; }
+          &:hover { opacity: 0.7; }
+          &:active { opacity: 0.9; }
+          &:hover, &.active { text-decoration: underline; }
+        }
+      }
+    }
+  }
 }
 
 ////
@@ -125,51 +128,69 @@ html {
 
 main {
 
-  // Main sections.
+  background: linear-gradient(to bottom, darken($color-mainback, 15%), $color-mainback);
+
+  // All main sections.
   & > section {
     @include common-slice;
 
-    color: #eee;
-    background: #444;
+    color: #444;
+    background: rgba(255, 255, 255, 0.25);
 
     h2 {
-      color: #fff;
+      color: #222;
       text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3);
     }
 
-    a { @include link(dodgerblue); }
+    p { color: #555; }
+
+    a { @include link(#065aad); }
   }
 
+  // Projects section.
   .projects {
     width: auto;
     max-width: 480px;
     margin: 0 auto;
+    border-radius: 0 0 8px 8px;
 
-    * + * { margin: 0.5em auto; }
+    // Project groupings.
+    & > section {
+      margin: 2em auto;
+      &:first-of-type { margin-top: 0; }
 
-    & > * + section {
-      margin-top: 1.5em;
+      // Each individual project.
+      & > section {
+        margin: 1em auto;
+      }
     }
+  }
+}
 
-    p { color: #aaa; }
+// Footer.
+.footer {
+
+  .backswing {
+    display: block;
+    width: 100%;
   }
 
-  // Main footer
-  footer {
+  .free-and-open {
     @include common-slice;
+
+    opacity: 0.75;
+
+    display: block;
+    max-width: 480px;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    font-style: italic;
 
     text-align: center;
     color: #eee;
-    a { @include link(#9ecfff); }
 
-    .free-and-open {
-      display: block;
-      max-width: 480px;
-      margin: 0 auto;
-      letter-spacing: 0.1em;
-      font-style: italic;
-      p { margin: 0.69em auto; }
-      small { font-size: 1em; opacity: 0.8; }
-    }
+    a { @include link(#9ecfff); }
+    p { margin: 0.69em auto; }
+    small { font-size: 1em; opacity: 0.8; }
   }
 }

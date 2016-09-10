@@ -38,8 +38,8 @@
   <body>
 
     <!--
-     ::: TOP HEADER/BANNER
-     -->
+    :::: TOP HEADER/BANNER
+    -->
     <header class="header" itemtype="http://schema.org/Person">
 
       <!-- My portrait -->
@@ -56,31 +56,53 @@
       </h1>
 
       <!-- Email address -->
-      <div>
+      <!--<div>
         <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a>
-      </div>
+      </div>-->
 
       <!-- Navbar -->
-      <!--<nav>
+      <nav>
         <ol>
-          <li><a class="active" href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#blog">Blog</a></li>
+          <li><a class="active" href="./">Me</a></li>
+          <!--<li><a href="blog">Blog</a></li>-->
         </ol>
-      </nav>-->
+      </nav>
 
     </header>
 
     <!--
-     ::: MAIN CONTENT
-     -->
+    :::: MAIN CONTENT
+    -->
     <main>
 
-      <!-- Projects section -->
-      <section>
-        <div class="projects">
-          <h2>GitHub Projects</h2>
-          <p>These side-projects keep me actively learning.</p>
+      <!--
+      :::: Projects
+      -->
+      <section class="projects">
+        <section class="websites">
+          <h2>Websites</h2>
+
+          <!-- chasemoskal.github.io -->
+          <section>
+            <h3>
+              <a href="https://github.com/ChaseMoskal/chasemoskal.github.io" target="_blank">chasemoskal.github.io</a>
+            </h3>
+            <p><strong>Literally this website's source code, on GitHub.</strong> This is my open source personal website and template.</p>
+          </section>
+        </section>
+        <section class="tools">
+          <h2>Tools</h2>
+
+          <!-- PasteSafe -->
+          <section>
+            <h3>
+              <a href="https://pastesafe.github.io/" target="_blank">PasteSafe</a>
+            </h3>
+            <p><strong>Instant web cryptography.</strong> Encrypt text with password as you type. Securely share or store sensitive information your own way.</p>
+          </section>
+        </section>
+        <section class="games">
+          <h2>Games</h2>
 
           <!-- Susa -->
           <section>
@@ -97,34 +119,17 @@
             </h3>
             <p><strong>Robotic tank combat 3D multiplayer action web game.</strong> Built on the Susa project below.</p>
           </section>
-
-          <!-- PasteSafe -->
-          <section>
-            <h3>
-              <a href="https://pastesafe.github.io/" target="_blank">PasteSafe</a>
-            </h3>
-            <p><strong>Instant web cryptography.</strong> Encrypt text with password as you type. Securely share or store sensitive information your own way.</p>
-          </section>
-
-          <!-- chasemoskal.github.io -->
-          <section>
-            <h3>
-              <a href="https://github.com/ChaseMoskal/chasemoskal.github.io" target="_blank">chasemoskal.github.io</a>
-            </h3>
-            <p><strong>Literally this website's source code, on GitHub.</strong> This is my open source personal website and template.</p>
-          </section>
-
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer>
-        <section class="free-and-open">
-          <p><strong>Website source code free and open</strong> (ISC Licensed)</p>
-          <p><a href="https://github.com/ChaseMoskal/chasemoskal.github.io" target="_blank">➳ See on GitHub</a></p>
         </section>
-      </footer>
-
+      </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <img class="backswing" src="images/backswing.jpg" alt=""/>
+      <section class="free-and-open">
+        <p>ready for battle</p>
+        <p>email me at <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a></p>
+      </section>
+    </footer>
   </body>
 </html>

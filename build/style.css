@@ -5,7 +5,7 @@
 html {
   font-family: "Lato", Arial;
   font-size: 16px;
-  background: #888; }
+  background: #140f0b; }
   @media (max-width: 600px) {
     html {
       font-size: 12px; } }
@@ -61,66 +61,91 @@ html {
       text-decoration: underline; }
     .header a:active {
       color: #0c5c2d; }
+  .header nav ol {
+    list-style: none; }
+    .header nav ol li {
+      display: inline-block;
+      margin: 0 0.5em;
+      text-transform: lowercase; }
+      .header nav ol li a {
+        text-decoration: none;
+        color: black; }
+        .header nav ol li a:link {
+          opacity: 0.5; }
+        .header nav ol li a:hover {
+          opacity: 0.7; }
+        .header nav ol li a:active {
+          opacity: 0.9; }
+        .header nav ol li a:hover, .header nav ol li a.active {
+          text-decoration: underline; }
 
-main > section {
+main {
+  background: linear-gradient(to bottom, #c8c8c8, #eee); }
+  main > section {
+    width: auto;
+    padding: 4%;
+    color: #444;
+    background: rgba(255, 255, 255, 0.25); }
+    @media (max-width: 800px) {
+      main > section {
+        width: auto; } }
+    main > section h2 {
+      color: #222;
+      text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3); }
+    main > section p {
+      color: #555; }
+    main > section a {
+      text-decoration: none; }
+      main > section a:link, main > section a:visited {
+        color: #065aad; }
+      main > section a:hover {
+        color: #0874de;
+        text-decoration: underline; }
+      main > section a:active {
+        color: #04407c; }
+  main .projects {
+    width: auto;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 0 0 8px 8px; }
+    main .projects > section {
+      margin: 2em auto; }
+      main .projects > section:first-of-type {
+        margin-top: 0; }
+      main .projects > section > section {
+        margin: 1em auto; }
+
+.footer .backswing {
+  display: block;
+  width: 100%; }
+
+.footer .free-and-open {
   width: auto;
   padding: 4%;
-  color: #eee;
-  background: #444; }
-  @media (max-width: 800px) {
-    main > section {
-      width: auto; } }
-  main > section h2 {
-    color: #fff;
-    text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3); }
-  main > section a {
-    text-decoration: none; }
-    main > section a:link, main > section a:visited {
-      color: dodgerblue; }
-    main > section a:hover {
-      color: #51a9ff;
-      text-decoration: underline; }
-    main > section a:active {
-      color: #0077ea; }
-
-main .projects {
-  width: auto;
+  opacity: 0.75;
+  display: block;
   max-width: 480px;
-  margin: 0 auto; }
-  main .projects * + * {
-    margin: 0.5em auto; }
-  main .projects > * + section {
-    margin-top: 1.5em; }
-  main .projects p {
-    color: #aaa; }
-
-main footer {
-  width: auto;
-  padding: 4%;
+  margin: 0 auto;
+  letter-spacing: 0.1em;
+  font-style: italic;
   text-align: center;
   color: #eee; }
   @media (max-width: 800px) {
-    main footer {
+    .footer .free-and-open {
       width: auto; } }
-  main footer a {
+  .footer .free-and-open a {
     text-decoration: none; }
-    main footer a:link, main footer a:visited {
+    .footer .free-and-open a:link, .footer .free-and-open a:visited {
       color: #9ecfff; }
-    main footer a:hover {
+    .footer .free-and-open a:hover {
       color: #d1e8ff;
       text-decoration: underline; }
-    main footer a:active {
+    .footer .free-and-open a:active {
       color: #6bb6ff; }
-  main footer .free-and-open {
-    display: block;
-    max-width: 480px;
-    margin: 0 auto;
-    letter-spacing: 0.1em;
-    font-style: italic; }
-    main footer .free-and-open p {
-      margin: 0.69em auto; }
-    main footer .free-and-open small {
-      font-size: 1em;
-      opacity: 0.8; }
+  .footer .free-and-open p {
+    margin: 0.69em auto; }
+  .footer .free-and-open small {
+    font-size: 1em;
+    opacity: 0.8; }
 
 /*# sourceMappingURL=style.css.map */
