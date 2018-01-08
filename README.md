@@ -1,4 +1,4 @@
 
-# [chasemoskal.github.io](https://chasemoskal.github.io/)
+# [chase-moskal.github.io](https://chase-moskal.github.io/)
 
-Source code for Chase Moskal's personal website.
+source code for my personal website

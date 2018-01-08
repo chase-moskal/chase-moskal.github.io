@@ -1,135 +1,107 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Chase Moskal – TypeScript Developer</title>
+		<title>chase moskal — creative developer</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300,300italic,400italic,700italic"/>
-    <link rel="stylesheet" href="build/style.css"/>
-    <link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300,300italic,400italic,700italic"/>
+		<link rel="stylesheet" href="dist/style.css"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+	</head>
+	<body>
 
-    <script>
+		<!-- HEADER -->
+		<header class="header" itemtype="http://schema.org/Person">
 
-      /**
-       * Load and execute a script by URL.
-       * Inject a script tag into the document's <head>.
-       */
-      function loadScript(link, onload) {
-        var script = document.createElement("script");
-        if (onload) script.onload = onload;
-        script.src = link + ".js";
-        document.head.appendChild(script);
-        return script;
-      }
+			<!-- Portrait -->
+			<div>
+				<img itemprop="image" src="images/chase.small.jpg" alt=""/>
+			</div>
 
-      // Debug mode. Load modules individually.
-      if (/^\??debug/i.test(location.search)) {
-        console.debug("Debug mode enabled.");
-        loadScript("deps/require", function() { require(["build/script"]) });
-      }
+			<!-- Title -->
+			<h1>
+				<strong itemprop="name">Chase Moskal</strong>
+				<em>
+					<span itemprop="jobTitle">Freelance Web Developer</span>
+				</em>
+			</h1>
 
-      // Production mode. Load optimized module bundle.
-      else loadScript("build/script.bundle");
+			<!-- Email address -->
+			<div>
+				<a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a>
+			</div>
 
-    </script>
-  </head>
-  <body>
+			<!-- Navbar -->
+			<nav>
+				<ol>
+					<li><a class="active" href="./">Me</a></li>
+					<!--<li><a href="blog">Blog</a></li>-->
+				</ol>
+			</nav>
 
-    <!--
-    :::: TOP HEADER/BANNER
-    -->
-    <header class="header" itemtype="http://schema.org/Person">
+		</header>
 
-      <!-- My portrait -->
-      <div>
-        <img itemprop="image" src="images/chase.small.jpg" alt=""/>
-      </div>
+		<!-- MAIN CONTENT -->
+		<main>
 
-      <!-- Name and title -->
-      <h1>
-        <strong itemprop="name">Chase Moskal</strong>
-        <em>
-          <span itemprop="jobTitle">TypeScript Developer</span> at <a href="http://www.ingrooves.com/" target="_blank" itemprop="worksFor">INgrooves Music Group</a>
-        </em>
-      </h1>
+			<!-- Projects -->
+			<section class="projects">
+				<section class="websites">
+					<h2>Websites</h2>
 
-      <!-- Email address -->
-      <!--<div>
-        <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a>
-      </div>-->
+					<!-- chasemoskal.github.io -->
+					<section>
+						<h3>
+							<a href="https://github.com/chase-moskal/chase-moskal.github.io" target="_blank">chase-moskal.github.io</a>
+						</h3>
+						<p><strong>Literally this website's source code, on GitHub.</strong> This is my open source personal website and template.</p>
+					</section>
+				</section>
+				<section class="tools">
+					<h2>Tools</h2>
 
-      <!-- Navbar -->
-      <nav>
-        <ol>
-          <li><a class="active" href="./">Me</a></li>
-          <!--<li><a href="blog">Blog</a></li>-->
-        </ol>
-      </nav>
+					<!-- pastesafe -->
+					<section>
+						<h3>
+							<a href="https://pastesafe.github.io/" target="_blank">PasteSafe</a>
+						</h3>
+						<p><strong>Instant web cryptography.</strong> Encrypt text with password as you type. Securely share or store sensitive information your own way.</p>
+					</section>
+				</section>
+				<section class="games">
+					<h2>Games</h2>
 
-    </header>
+					<!-- susa -->
+					<section>
+						<h3>
+							<a href="https://github.com/AkkadianGames/Susa#readme" target="_blank">Susa</a>
+						</h3>
+						<p><strong>Networked web game framework featuring a map editor.</strong> This is a continuation of the networked game engine concepts that I've been developing with friends for years, but this time implemented purely on the web, built on top of <a href="http://www.babylonjs.com/">BabylonJS</a>.</p>
+					</section>
 
-    <!--
-    :::: MAIN CONTENT
-    -->
-    <main>
+					<!-- nanoshooter -->
+					<section>
+						<h3>
+							<a href="https://github.com/AkkadianGames/Nanoshooter#readme" target="_blank">Nanoshooter</a>
+						</h3>
+						<p><strong>Robotic tank combat 3D multiplayer action web game.</strong> Built on the Susa project below.</p>
+					</section>
+				</section>
+			</section>
+		</main>
 
-      <!--
-      :::: Projects
-      -->
-      <section class="projects">
-        <section class="websites">
-          <h2>Websites</h2>
+		<!-- footer -->
+		<footer class="footer">
+			<img class="backswing" src="images/backswing.jpg" alt=""/>
+			<section class="free-and-open">
+				<p>ready for battle</p>
+				<p>email me at <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a></p>
+			</section>
+		</footer>
 
-          <!-- chasemoskal.github.io -->
-          <section>
-            <h3>
-              <a href="https://github.com/ChaseMoskal/chasemoskal.github.io" target="_blank">chasemoskal.github.io</a>
-            </h3>
-            <p><strong>Literally this website's source code, on GitHub.</strong> This is my open source personal website and template.</p>
-          </section>
-        </section>
-        <section class="tools">
-          <h2>Tools</h2>
-
-          <!-- PasteSafe -->
-          <section>
-            <h3>
-              <a href="https://pastesafe.github.io/" target="_blank">PasteSafe</a>
-            </h3>
-            <p><strong>Instant web cryptography.</strong> Encrypt text with password as you type. Securely share or store sensitive information your own way.</p>
-          </section>
-        </section>
-        <section class="games">
-          <h2>Games</h2>
-
-          <!-- Susa -->
-          <section>
-            <h3>
-              <a href="https://github.com/AkkadianGames/Susa#readme" target="_blank">Susa</a>
-            </h3>
-            <p><strong>Networked web game framework featuring a map editor.</strong> This is a continuation of the networked game engine concepts that I've been developing with friends for years, but this time implemented purely on the web, built on top of <a href="http://www.babylonjs.com/">BabylonJS</a>.</p>
-          </section>
-
-          <!-- Nanoshooter -->
-          <section>
-            <h3>
-              <a href="https://github.com/AkkadianGames/Nanoshooter#readme" target="_blank">Nanoshooter</a>
-            </h3>
-            <p><strong>Robotic tank combat 3D multiplayer action web game.</strong> Built on the Susa project below.</p>
-          </section>
-        </section>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <img class="backswing" src="images/backswing.jpg" alt=""/>
-      <section class="free-and-open">
-        <p>ready for battle</p>
-        <p>email me at <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a></p>
-      </section>
-    </footer>
-  </body>
+		<!-- JAVASCRIPT -->
+		<script src="dist/main.bundle.js"></script>
+	</body>
 </html>

@@ -1,11 +1,17 @@
 {
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.wrappingColumn": 0,
-  "editor.renderWhitespace": true,
-  "editor.wrappingIndent": "indent",
-  "files.exclude": {
-    "build": true,
-    "node_modules": true
-  }
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+
+	"files.eol": "\n",
+	"files.encoding": "utf8",
+	"files.insertFinalNewline": true,
+
+	"files.exclude": {
+		"dist": true,
+		"coverage": true,
+		"node_modules": true,
+		"*.log*": true
+	},
+
+	"typescript.tsdk": "node_modules/typescript/lib/"
 }
