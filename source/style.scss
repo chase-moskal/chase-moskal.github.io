@@ -1,43 +1,33 @@
 
 @charset "utf-8";
 
-////
-//// FUNDAMENTALS
-////
-
-* { margin: 0; padding: 0; }
-
-$color-latitudegreen: #128943;
 $color-backdrop: #140f0b;
 $color-mainback: #eee;
+$color-maintext: lighten(desaturate($color-backdrop, 10%), 20%);
+$color-feature: #ad5606;
+$color-feature-old: #065aad;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
 html {
+	text-transform: lowercase;
 	font-family: "Lato", Arial;
 	font-size: 16px;
 	background: $color-backdrop;
-	@media (max-width:600px) { font-size: 12px; }
-
-	// Headings.
-	h1 {
-		font-weight: normal;
-		strong { font-weight: normal; }
-	}
+	background: linear-gradient(to bottom, lighten(desaturate($color-backdrop, 25%), 25%), $color-backdrop 70%);
 }
 
-// Create links with a base color.
-@mixin link($linkcolor: $color-latitudegreen) {
-	text-decoration: none;
-	&:link, &:visited { color: $linkcolor; }
-	&:hover {
-		color: lighten($linkcolor, 10%);
-		text-decoration: underline;
-	}
-	&:active { color: darken($linkcolor, 10%); }
+body {
+	margin: auto;
+	width: 96%;
+	max-width: 1200px;
 }
 
-// Common establishes a common padding and width with media queies for page sections.
-// This makes it easy to line up the header content and the main content on the left side.
-@mixin common-slice {
+@mixin slice {
 	width: auto;
 	padding: 4%;
 
@@ -47,40 +37,51 @@ html {
 	}
 }
 
-////
-//// HEADER
-////
+@mixin link($linkcolor) {
 
-.header {
-	@include common-slice;
+	&:link, &:visited {
+		color: $linkcolor;
+		text-decoration: none;
+	}
+
+	&:hover {
+		color: darken($linkcolor, 5%);
+		text-decoration: underline;
+	}
+
+	&:active {
+		color: darken($linkcolor, 15%);
+	}
+}
+
+a { @include link($color-feature); }
+
+//
+// HEADER
+//
+
+.siteheader {
+	@include slice;
 	text-align: center;
+	background: $color-mainback;
+	color: $color-maintext;
+	box-shadow: 0 4px 7px rgba(0,0,0, 0.1);
 
 	& > * {
 		margin: 1em auto;
 	}
 
-	background: #eee;
-	box-shadow: 0 4px 7px rgba(0,0,0, 0.1);
-
-	@media (min-width:800px) {
-		display: table;
-		text-align: left;
-		& > * {
-			display: table-cell;
-			vertical-align: middle;
-			&:first-child { width: 1%; }
+	.headerportrait {
+		img {
+			width: 6em;
+			margin-right: 1em;
+			border: 3px solid white;
+			border-radius: 2px;
+			box-shadow: 1px 2px 4px rgba(0,0,0, 0.1);
 		}
 	}
 
-	img {
-		width: 6em;
-		margin-right: 1em;
-		border: 3px solid white;
-		border-radius: 6em;
-		box-shadow: 1px 2px 4px rgba(0,0,0, 0.1);
-	}
-
-	h1 {
+	.headertitle {
 		line-height: 0.8em;
 
 		strong {
@@ -98,94 +99,112 @@ html {
 		}
 	}
 
-	a { @include link; }
+	.headernav {
+		text-align: right;
 
-	nav {
 		ol {
 			list-style: none;
+
 			li {
 				display: inline-block;
 				margin: 0 0.5em;
-
 				text-transform: lowercase;
-
-				a {
-					text-decoration: none;
-					color: black;
-					&:link { opacity: 0.5; }
-					&:hover { opacity: 0.7; }
-					&:active { opacity: 0.9; }
-					&:hover, &.active { text-decoration: underline; }
-				}
 			}
+
+			a.active {
+				opacity: 0.6;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	@media (min-width:800px) {
+		display: table;
+		text-align: left;
+		& > * {
+			display: table-cell;
+			vertical-align: middle;
+			&:first-child { width: 1%; }
 		}
 	}
 }
 
-////
-//// MAIN
-////
+//
+// MAIN
+//
 
 main {
-
 	background: linear-gradient(to bottom, darken($color-mainback, 15%), $color-mainback);
+	color: darken($color-maintext, 10%);
+	padding-bottom: 8em;
+}
 
-	// All main sections.
-	& > section {
-		@include common-slice;
+//
+// PROJECTLAND
+//
 
-		color: #444;
-		background: rgba(255, 255, 255, 0.25);
+.projectland {
+	@include slice;
 
-		h2 {
-			color: #222;
-			text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.3);
-		}
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	color: $color-maintext;
 
-		p { color: #555; }
-
-		a { @include link(#065aad); }
+	h1, h2 {
+		font-weight: normal;
 	}
 
-	// Projects section.
-	.projects {
-		width: auto;
-		max-width: 480px;
-		margin: 0 auto;
-		border-radius: 0 0 8px 8px;
+	h1 {
+		order: -2;
+		flex-basis: 100%;
+		text-align: center;
+		font-size: 2em;
+		padding-bottom: 1em;
+		opacity: 0.5;
+		color: white;
+		text-shadow: 1px 1px 3px rgba(0,0,0, 0.2);
+		font-weight: bold;
+	}
 
-		// Project groupings.
-		& > section {
+	.projectgroup {
+		flex: 1 1 320px;
+		padding: 1em;
+		margin: 1em;
+		background: rgba(255,255,255, 0.3);
+
+		h2 {
+			padding: 1em 0;
+			text-align: center;
+			opacity: 0.5;
+		}
+
+		div {
 			margin: 2em auto;
-			&:first-of-type { margin-top: 0; }
-
-			// Each individual project.
-			& > section {
-				margin: 1em auto;
-			}
 		}
 	}
 }
 
-// Footer.
-.footer {
+//
+// FOOTER
+//
+
+.sitefooter {
 
 	.backswing {
 		display: block;
 		width: 100%;
 	}
 
-	.free-and-open {
-		@include common-slice;
-
+	.endremarks {
+		@include slice;
 		opacity: 0.75;
-
 		display: block;
+		padding: 8em 0;
 		max-width: 480px;
 		margin: 0 auto;
 		letter-spacing: 0.1em;
 		font-style: italic;
-
 		text-align: center;
 		color: #eee;
 

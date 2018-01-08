@@ -4,7 +4,7 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<title>chase moskal — creative developer</title>
+		<title>chase moskal – web developer</title>
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,300,300italic,400italic,700italic"/>
 		<link rel="stylesheet" href="dist/style.css"/>
@@ -13,89 +13,105 @@
 	<body>
 
 		<!-- HEADER -->
-		<header class="header" itemtype="http://schema.org/Person">
-
-			<!-- Portrait -->
-			<div>
+		<header class="siteheader" itemtype="http://schema.org/Person">
+			<div class="headerportrait">
 				<img itemprop="image" src="images/chase.small.jpg" alt=""/>
 			</div>
 
-			<!-- Title -->
-			<h1>
+			<h1 class="headertitle">
 				<strong itemprop="name">Chase Moskal</strong>
 				<em>
-					<span itemprop="jobTitle">Freelance Web Developer</span>
+					<span itemprop="jobTitle">Web Developer</span>
 				</em>
 			</h1>
 
-			<!-- Email address -->
-			<div>
+			<div class="headerinfo">
 				<a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a>
 			</div>
 
-			<!-- Navbar -->
-			<nav>
+			<nav class="headernav">
 				<ol>
-					<li><a class="active" href="./">Me</a></li>
-					<!--<li><a href="blog">Blog</a></li>-->
+					<li><a class="active" href="./">home</a></li>
+					<!-- <li><a href="blog">Blog</a></li> -->
 				</ol>
 			</nav>
-
 		</header>
 
 		<!-- MAIN CONTENT -->
 		<main>
+			<section class="projectland">
+				<h1>My GitHub Projects</h1>
 
-			<!-- Projects -->
-			<section class="projects">
-				<section class="websites">
-					<h2>Websites</h2>
+				<section class="projectgroup webapps">
+					<h2>Websites and Applications</h2>
 
-					<!-- chasemoskal.github.io -->
-					<section>
-						<h3>
-							<a href="https://github.com/chase-moskal/chase-moskal.github.io" target="_blank">chase-moskal.github.io</a>
-						</h3>
-						<p><strong>Literally this website's source code, on GitHub.</strong> This is my open source personal website and template.</p>
-					</section>
+					<div>
+						<h3><a target="_blank" href="https://open-history.github.io/battle-of-alesia">Battle of Alesia</a></h3>
+						<p><strong>Julius Caesar's Battle of Alesia, presented in a visual storytelling experience.</strong> With my own narration and web production, and <a href="https://github.com/Loonietoon">Lonnie Ralfs'</a> beautiful illustrations</p>
+					</div>
+
+					<div>
+						<h3><a target="_blank" href="https://pastesafe.github.io">PasteSafe</a></h3>
+						<p><strong>Instant web cryptography.</strong> Encrypt text with password as you type. Securely share or store sensitive information your own way</p>
+					</div>
+
+					<div>
+						<h3><a target="_blank" href="https://github.com/chase-moskal/chase-moskal.github.io">This Website</a></h3>
+						<p><strong>Literally this website's source code, on GitHub.</strong> This is my open source personal website</p>
+					</div>
 				</section>
-				<section class="tools">
-					<h2>Tools</h2>
 
-					<!-- pastesafe -->
-					<section>
-						<h3>
-							<a href="https://pastesafe.github.io/" target="_blank">PasteSafe</a>
-						</h3>
-						<p><strong>Instant web cryptography.</strong> Encrypt text with password as you type. Securely share or store sensitive information your own way.</p>
-					</section>
+				<section class="projectgroup tooling">
+					<h2>Tooling</h2>
+
+					<div>
+						<h3><a target="_blank" href="https://github.com/chase-moskal/chillax">chillax</a></h3>
+						<p><strong>Vertical parallax engine for beautiful web presentations.</strong> parallax animation engine to create beautiful 3d-feeling scenes — I created this specifically to power the Battle of Alesia project with Lonnie</p>
+					</div>
+
+					<div>
+						<h3><a target="_blank" href="https://github.com/chase-moskal/webp-hero">Webp Hero</a></h3>
+						<p><strong>Browser polyfill for the webp image format.</strong> I've bundled up Google's webp image decoder as a javascript module, and created a handy polyfill script which makes webp images work in all browsers (given some extra decoding time for the users)</p>
+					</div>
+
+					<div>
+						<h3><a target="_blank" href="https://github.com/chase-moskal/webp-hero">Glorious Frontend</a></h3>
+						<p><strong>A stack to stake your career on.</strong> Free open-source minimalistic clientside web application boilerplate template</p>
+					</div>
+
+					<div>
+						<h3><a target="_blank" href="https://github.com/chase-moskal/crochet">Crochet</a></h3>
+						<p><strong>Write javascript anywhere.</strong> Node static site generation library</p>
+					</div>
+
+					<div>
+						<h3><a target="_blank" href="https://github.com/chase-moskal/midi-listener">Midi Listener</a></h3>
+						<p><strong>Listen for and interpret MIDI device input.</strong> Npm module for the browser</p>
+					</div>
 				</section>
-				<section class="games">
+
+				<section class="projectgroup games">
 					<h2>Games</h2>
 
-					<!-- susa -->
-					<section>
-						<h3>
-							<a href="https://github.com/AkkadianGames/Susa#readme" target="_blank">Susa</a>
-						</h3>
-						<p><strong>Networked web game framework featuring a map editor.</strong> This is a continuation of the networked game engine concepts that I've been developing with friends for years, but this time implemented purely on the web, built on top of <a href="http://www.babylonjs.com/">BabylonJS</a>.</p>
-					</section>
+					<div>
+						<h3><a target="_blank" href="https://github.com/monarch-games/engine">Monarch Engine</a></h3>
+						<p><strong>Concept game engine.</strong> Networked web game framework featuring a map editor. This is a continuation of the networked game engine concepts that I've been developing with friends for years, but this time implemented purely on the web, built on top of <a target="_blank" href="http://www.babylonjs.com/">babylonjs</a></p>
+					</div>
 
-					<!-- nanoshooter -->
-					<section>
-						<h3>
-							<a href="https://github.com/AkkadianGames/Nanoshooter#readme" target="_blank">Nanoshooter</a>
-						</h3>
-						<p><strong>Robotic tank combat 3D multiplayer action web game.</strong> Built on the Susa project below.</p>
-					</section>
+					<div>
+						<h3><a target="_blank" href="https://github.com/monarch-games/nanoshooter">Nanoshooter</a></h3>
+						<p><strong>Robot tank game.</strong> 3D game to demonstrate the monarch game engine</p>
+					</div>
 				</section>
+
 			</section>
 		</main>
 
-		<!-- footer -->
-		<footer class="footer">
+		<!-- FOOTER -->
+		<footer class="sitefooter">
 			<img class="backswing" src="images/backswing.jpg" alt=""/>
-			<section class="free-and-open">
+
+			<section class="endremarks">
 				<p>ready for battle</p>
 				<p>email me at <a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a></p>
 			</section>
