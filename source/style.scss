@@ -99,6 +99,10 @@ a { @include link($color-feature); }
 		}
 	}
 
+	.headerinfo {
+		text-align: right;
+	}
+
 	.headernav {
 		text-align: right;
 
