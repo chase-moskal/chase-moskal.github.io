@@ -1,0 +1,8 @@
+
+extend ../_layout
+
+block vars
+	- title = titleize("posts index")
+
+block content
+	include:markdown-it(html) index.md

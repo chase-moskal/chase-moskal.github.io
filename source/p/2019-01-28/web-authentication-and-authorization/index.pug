@@ -1,0 +1,11 @@
+
+extends ../../../_layout
+
+block vars
+	- title = titleize(`web authentication and authorization`)
+
+block headly
+	link(rel="stylesheet" href="post.css")
+
+block content
+	include:markdown-it(html) how-modern-web-auth-works.md
