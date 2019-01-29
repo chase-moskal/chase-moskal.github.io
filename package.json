@@ -16,7 +16,7 @@
 		"build-styles": "sassbass --indir source --outdir dist",
 		"build-styles:debug": "sassbass --indir source --outdir dist --sourcemap",
 		"watch": "run-p watch-pages watch-styles",
-		"watch-pages": "npm run build-pages:debug -s --watch",
+		"watch-pages": "pug --watch --pretty --out dist source",
 		"watch-styles": "npm run build-styles:debug -s -- --watch",
 		"test": "exit 0",
 		"start": "http-server dist"

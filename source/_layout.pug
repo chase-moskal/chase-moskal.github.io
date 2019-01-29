@@ -11,4 +11,15 @@ html
 		link(rel="stylesheet" href="/main.css")
 		block headly
 	body
+		header
+			.portrait
+				img(alt="[portrait: chase moskal]" src="/assets/chase.jpg")
+				.nametag
+					p Chase Moskal
+					p Web Developer
+			.navarea
+				a(href="/") home
+				a(href="/p/") posts
+				a(data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank")
 		block content
+		script(src="/main.bundle.js")
