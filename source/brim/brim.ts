@@ -1,6 +1,4 @@
 
-console.log("brimlol")
-
 interface PhotoSlide {
 	url: string
 	caption: string
