@@ -1,4 +1,17 @@
 
-h1 {
-	color: green;
+.content {
+	padding: 2em 1em;
+	background: rgba(255,255,255, 0.05);
+
+	& > * + * {
+		margin-top: 0.67em;
+	}
+
+	h1 {
+		font-size: 1.2em;
+	}
+
+	h2 {
+		font-size: 1.1em;
+	}
 }

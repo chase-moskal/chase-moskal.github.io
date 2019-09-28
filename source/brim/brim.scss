@@ -1,0 +1,93 @@
+
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=UnifrakturCook:700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+	font-size: 21px;
+	background: #222;
+	background: url("/assets/brim/chivs-arena.jpg");
+	background-size: cover;
+	color: white;
+	padding: 1%;
+}
+
+html::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0, 0.6);
+}
+
+body {
+	z-index: 1;
+	position: relative;
+	margin: auto;
+	max-width: 400px;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: lightskyblue;
+	&:hover, &:focus {
+		text-decoration: underline;
+		color: skyblue;
+	}
+}
+
+figure {
+	position: relative;
+	box-shadow: 1px 4px 4px rgba(0,0,0, 0.5)
+}
+
+h1 {
+	font-family: "UnifrakturCook", serif;
+	font-size: 1.2em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0, 0.5);
+	padding: 0.1em 0.2em;
+	text-shadow: 1px 2px 3px rgba(0,0,0, 0.5);
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+figcaption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0, 0.5);
+	text-shadow: 1px 2px 3px rgba(0,0,0, 0.5);
+	padding: 0.2em 0.5em;
+	font-size: 0.8em;
+	font-style: italic;
+	.cred {
+		opacity: 0.8;
+		color: yellow;
+	}
+}
+
+.discord {
+	opacity: 0.6;
+	margin-top: 0.5em;
+	font-size: 0.8em;
+	font-family: sans-serif;
+}

@@ -1,17 +1,18 @@
 {
 	"private": true,
 	"name": "chasemoskal.com",
-	"version": "0.0.0-dev.2",
+	"version": "0.0.0-dev.3",
 	"license": "ISC",
 	"scripts": {
 		"prepare": "run-s build test",
-		"build": "run-s clean && run-p build-copy build-scripts build-pages build-styles && echo ✔ done production build",
+		"build": "run-s clean && run-p importmap build-copy build-scripts build-pages build-styles && echo ✔ done production build",
 		"clean": "rimraf dist && mkdirp dist && mkdirp dist/assets",
-		"build-copy": "ncp assets dist/assets && ncp CNAME dist/ && ncp favicon.ico dist/ && ncp .nojekyll dist/ && ncp robots.txt dist/",
+		"importmap": "importly < package.json > dist/importmap.json",
+		"build-copy": "(cd assets && cpy '**' ../dist/assets --parents) && cpy CNAME dist/ && cpy favicon.ico dist/ && cpy .nojekyll dist/ && cpy robots.txt dist/",
 		"build-scripts": "tsc",
 		"build-pages": "pug --pretty --out dist source",
 		"build-styles": "sassbass --indir source --outdir dist --sourcemap",
-		"watch": "run-p watch-pages watch-styles",
+		"watch": "run-p watch-pages watch-styles watch-scripts",
 		"watch-pages": "pug --watch --pretty --out dist source",
 		"watch-scripts": "npm run build-scripts -s -- --watch",
 		"watch-styles": "npm run build-styles -s -- --watch",
@@ -19,15 +20,16 @@
 		"start": "serve dist"
 	},
 	"devDependencies": {
+		"importly": "0.1.0-dev.0",
 		"jstransformer-markdown-it": "2.1.0",
 		"mkdirp": "0.5.1",
-		"ncp": "2.0.0",
 		"npm-run-all": "4.1.5",
 		"pug-cli": "1.0.0-alpha6",
 		"rimraf": "2.6.3",
 		"sassbass": "0.0.2",
 		"serve": "11.2.0",
-		"typescript": "3.2.4"
+		"typescript": "3.2.4",
+		"cpy-cli": "2.0.0"
 	},
 	"dependencies": {}
 }

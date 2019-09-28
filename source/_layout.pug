@@ -8,18 +8,22 @@ html
 		block vars
 		meta(charset="utf-8")
 		title= title
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap")
 		link(rel="stylesheet" href="/main.css")
+		link(rel="shortcut icon" href="/favicon.ico")
+		script(type="importmap-shim" src="/importmap.json")
+		script(type="module-shim" src="/main.js")
+		script(async defer src="https://unpkg.com/es-module-shims@0.4.5/dist/es-module-shims.js")
 		block headly
 	body
 		header
 			.portrait
 				img(alt="[portrait: chase moskal]" src="/assets/chase.jpg")
-				.nametag
-					p Chase Moskal
-					p Web Developer
+				//- .nametag
+				//- 	p Chase Moskal
+				//- 	p Web Developer
 			.navarea
-				a(href="/") home
-				a(href="/p/") posts
+				//- a(href="/") home
+				//- a(href="/p/") posts
 				a(data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank")
 		block content
-		script(src="/main.bundle.js")

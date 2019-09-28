@@ -8,6 +8,72 @@
 }
 
 html, body {
-	background: #333;
+	color: #aaa;
+	background: #111;
 	min-height: 100%;
+	font-family: Lato, sans-serif;
+}
+
+html {
+	padding: 1em;
+}
+
+body {
+	max-width: 800px;
+	margin: auto;
+}
+
+a {
+	color: lightskyblue;
+	text-decoration: none;
+	&:hover, &:focus {
+		color: deepskyblue;
+		text-decoration: underline;
+	}
+	&:active {
+		color: cyan;
+	}
+}
+
+body > header {
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+	background: rgba(255,255,255, 0.1);
+	.portrait {
+		flex: 0 0 auto;
+		font-size: 0.8em;
+		img {
+			display: block;
+			width: 100%;
+			max-width: 8em;
+			border-radius: 7px;
+			margin: auto;
+		}
+		.nametag {
+			p:first-of-type {
+				font-weight: bold;
+			}
+		}
+	}
+	.navarea {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		align-content: center;
+		padding: 1em;
+		a {
+			display: inline-block;
+			margin: 0.1em 0.5em;
+		}
+	}
+	@media (max-width: 400px) {
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		.navarea {
+			justify-content: center;
+		}
+	}
 }
