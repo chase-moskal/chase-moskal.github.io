@@ -1,4 +1,4 @@
 
-import antispam from "./modules/antispam"
+import {antispam} from "./modules/antispam.js"
 
 antispam()

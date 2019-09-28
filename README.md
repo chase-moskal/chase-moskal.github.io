@@ -1,4 +1,4 @@
 
-# [chase-moskal.github.io](https://chase-moskal.github.io/)
+# [chasemoskal.com](https://chasemoskal.com/)
 
 source code for my personal website

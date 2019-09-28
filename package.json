@@ -1,41 +1,33 @@
 {
-	"name": "chasemoskal.com",
-	"license": "ISC",
 	"private": true,
-	"version": "0.0.0-dev.1",
+	"name": "chasemoskal.com",
+	"version": "0.0.0-dev.2",
+	"license": "ISC",
 	"scripts": {
 		"prepare": "run-s build test",
 		"build": "run-s clean && run-p build-copy build-scripts build-pages build-styles && echo ✔ done production build",
-		"build:debug": "run-s clean && run-p build-copy build-scripts:debug build-pages:debug build-styles:debug && echo ✔ done debug build",
 		"clean": "rimraf dist && mkdirp dist && mkdirp dist/assets",
 		"build-copy": "ncp assets dist/assets && ncp CNAME dist/ && ncp favicon.ico dist/ && ncp .nojekyll dist/ && ncp robots.txt dist/",
-		"build-scripts": "browserify source/main.ts -p [ tsify ] -g [ envify --NODE_ENV production ] > dist/main.bundle.uncompressed.js && uglifyjs -cm < dist/main.bundle.uncompressed.js > dist/main.bundle.js",
-		"build-scripts:debug": "browserify source/main.ts --debug -p [ tsify ] > dist/main.bundle.js",
-		"build-pages": "pug --out dist source",
-		"build-pages:debug": "pug --pretty --out dist source",
-		"build-styles": "sassbass --indir source --outdir dist",
-		"build-styles:debug": "sassbass --indir source --outdir dist --sourcemap",
+		"build-scripts": "tsc",
+		"build-pages": "pug --pretty --out dist source",
+		"build-styles": "sassbass --indir source --outdir dist --sourcemap",
 		"watch": "run-p watch-pages watch-styles",
 		"watch-pages": "pug --watch --pretty --out dist source",
-		"watch-styles": "npm run build-styles:debug -s -- --watch",
+		"watch-scripts": "npm run build-scripts -s -- --watch",
+		"watch-styles": "npm run build-styles -s -- --watch",
 		"test": "exit 0",
-		"start": "http-server dist"
+		"start": "serve dist"
 	},
 	"devDependencies": {
-		"browserify": "16.2.3",
-		"envify": "4.1.0",
-		"http-server": "0.11.1",
 		"jstransformer-markdown-it": "2.1.0",
 		"mkdirp": "0.5.1",
 		"ncp": "2.0.0",
 		"npm-run-all": "4.1.5",
 		"pug-cli": "1.0.0-alpha6",
 		"rimraf": "2.6.3",
-		"sassbass": "0.0.0-dev.4",
-		"tsify": "4.0.1",
-		"typescript": "3.2.4",
-		"uglify-es": "3.3.9",
-		"uglifyify": "5.0.1"
+		"sassbass": "0.0.2",
+		"serve": "11.2.0",
+		"typescript": "3.2.4"
 	},
 	"dependencies": {}
 }
