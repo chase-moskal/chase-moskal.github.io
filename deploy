@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 branch=${1?"1st arg 'branch' is required"}
+devbranch="dev"
 
-git checkout master
+git checkout $devbranch
 git checkout -b $branch
 
 sed -i 's/\/dist/\# \/dist/g' .gitignore
@@ -17,7 +18,7 @@ splitbranch="$branch-split"
 subtree=$(git subtree split --prefix dist -b $splitbranch)
 git push origin $splitbranch:$branch --force
 
-git checkout master
+git checkout $devbranch
 git branch -D $branch $splitbranch
 
 git status
