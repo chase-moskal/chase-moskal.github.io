@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  color: #aaa;
+  background: #111;
+  min-height: 100%;
+  font-family: Lato, sans-serif;
+}
+
+html {
+  padding: 1em;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+}
+
+a {
+  color: lightskyblue;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: deepskyblue;
+  text-decoration: underline;
+}
+a:active {
+  color: cyan;
+}
+
+body > header {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.1);
+}
+body > header .portrait {
+  flex: 0 0 auto;
+  font-size: 0.8em;
+}
+body > header .portrait img {
+  display: block;
+  width: 100%;
+  max-width: 8em;
+  border-radius: 7px;
+  margin: auto;
+}
+body > header .portrait .nametag p:first-of-type {
+  font-weight: bold;
+}
+body > header .navarea {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 1em;
+}
+body > header .navarea a {
+  display: inline-block;
+  margin: 0.1em 0.5em;
+}
+@media (max-width: 400px) {
+  body > header {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  body > header .navarea {
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

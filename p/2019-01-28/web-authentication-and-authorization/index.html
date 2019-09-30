@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chasemoskal– web authentication and authorization</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script type="importmap-shim" src="/importmap.json"></script>
+    <script type="module-shim" src="/main.js"></script>
+    <script async defer src="https://unpkg.com/es-module-shims@0.4.5/dist/es-module-shims.js"></script>
+    <link rel="stylesheet" href="post.css">
+  </head>
+  <body>
+    <header>
+      <div class="portrait"><img alt="[portrait: chase moskal]" src="/assets/chase.jpg"></div>
+      <div class="navarea"><a data-email="Y2hhc2Vtb3NrYWxAZ21haWwuY29t" target="_blank"></a></div>
+    </header><h1>How Modern Web Authentication and Authorization Works</h1>
+<p> <em>stateless, crossdomain, jwt, tokens, logins, user account management, node</em></p>
+<p>&quot;authentic&quot; means &quot;this is the right guy&quot;</p>
+<p>&quot;authorized&quot; means &quot;this guy is allowed to arrest you&quot;</p>
+<p>I wrote this article to digest what I've learned on the topic</p>
+<h2>How authentication and authorization works</h2>
+<h3>There should be at least three servers involved</h3>
+<ul>
+<li><strong>Frontend app</strong> — <code>example.com</code> — single page application</li>
+<li><strong>Auth server</strong> — <code>auth.example.com</code> — performs logins and signs tokens</li>
+<li><strong>API server</strong> — <code>api.example.com</code> — has secured backend functionality</li>
+</ul>
+<h3>&quot;User logs in and performs admin task&quot;</h3>
+<ol>
+<li>
+<p><strong>First, the Auth and API servers must initially conspire together</strong></p>
+<p>When the two servers are deployed, they share a secret key. They leave the Frontend out of this exchange, to establish trustworthy communication (you can't trust the Frontend)</p>
+</li>
+<li>
+<p><strong>Second, our user wants to login as an admin</strong></p>
+<ul>
+<li>the frontend runs the login routine
+<ul>
+<li>frontend uses crosscall in an iframe to consult token storage</li>
+<li>if there is a valid token, user is now logged in</li>
+<li>if no valid token, login button spawns an auth server popup window
+<ul>
+<li>google oauth routine occurs in the popup</li>
+<li>google tokens will be exchanged at the auth server for an access token</li>
+<li>access token is returned back from the popup, which terminates</li>
+<li>user is now logged, token is given to token storage for next time</li>
+</ul>
+</li>
+<li>user's name, and capabilities are encoded in the z-token
+<ul>
+<li>for our running example, the capability <code>&quot;admin&quot;</code> is present for our admin user</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Third, our user wants to perform an admin-level action</strong></p>
+<ul>
+<li>the frontend makes a call to the api server</li>
+<li>the frontend sends its request, proudly presenting its token</li>
+<li>the api server <em><strong>verifies the token against the secret key</strong></em>, and now knows the token is authentic</li>
+<li>the api server extracts user's public data from the token</li>
+<li>the api server sees that the role <code>&quot;admin&quot;</code> is present, and now knows the user is authorized</li>
+<li>the api server performs the authorized action</li>
+<li>the api server reports success back to the frontend</li>
+</ul>
+</li>
+</ol>
+<h3>You see what's going on here?</h3>
+<ul>
+<li>the frontend is not trusted, and is not given the secret key</li>
+<li>with the secret key, the auth and api servers can prove that the token payload (user data) has not been tampered with by the frontend</li>
+<li>tokens can contain data with guaranteed authenticity, despite an untrusted &quot;man-in-the middle&quot; like the frontend transporting the data</li>
+</ul>
+<h2>How to integrate google sign-in</h2>
+<ol>
+<li>
+<p>The frontend application initiates and completes an OAuth2 routine with google</p>
+</li>
+<li>
+<p>The frontend application recieves a google token, and then sends this token to the auth server</p>
+</li>
+<li>
+<p>The auth server verifies the token to extract the user's google id</p>
+</li>
+<li>
+<p>The auth server links the user's account to the google id</p>
+</li>
+</ol>
+
+  </body>
+</html>
